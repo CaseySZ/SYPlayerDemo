@@ -29,6 +29,13 @@
     [_slider addTarget:self action:@selector(sliderFinish:) forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel)];
 }
 
++ (instancetype)instanceView {
+    
+    PlayerViewDemo *playerView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] firstObject];
+    [playerView configView];
+    return playerView;
+}
+
 - (void)layoutSubviews{
     
     [super layoutSubviews];
@@ -45,20 +52,12 @@
         _toolView.x = 0;
         _toolView.bottom = self.height;
     }
-    
-    
-    //_slider.continuous = NO;
-   // _playerView.size = self.size;
-    
-    
 }
 
-
-+ (instancetype)instanceView {
-    NSArray* nibView =  [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil];
-    PlayerViewDemo *view = [nibView objectAtIndex:0];
-    [view playerController];
-    return view;
+- (void)configView{
+    
+    _playerView.delegate = self;
+    [_slider setThumbImage:[UIImage imageNamed:@"播放进度"] forState:UIControlStateNormal];
 }
 
 - (void)setVideoUrl:(NSURL *)videoUrl {
@@ -74,12 +73,8 @@
     _isFullScreen = isFullScreen;
 }
 
-- (void)playerController {
-    _playerView.delegate = self;
-    [_slider setThumbImage:[UIImage imageNamed:@"播放进度"] forState:UIControlStateNormal];
-}
 
-#pragma mark - palyerDelegate
+#pragma mark - SYPlayerMoviewViewDelegate
 // 时间监听
 - (void)currentMoviePlayTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime {
     _timeLb.text = [NSString stringWithFormat:@"%02lld:%02lld/%02lld:%02lld",(long long int) currentTime / 60, (long long int)currentTime % 60,(long long int) totalTime / 60,(long long int)totalTime % 60];
@@ -88,9 +83,14 @@
     [_slider setValue:currentTime/totalTime animated:YES];
     
 }
-// 预加载
-- (void)currentMoviePreloadPlayTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime {
-    [_progressView setProgress:currentTime/totalTime];
+
+- (void)moviePlayFinish:(NSDictionary *)errorDes {
+    
+}
+
+
+- (void)playPreloadFinish:(BOOL)isSuccess desc:(NSString *)desc {
+    
 }
 
 // 播放结束
@@ -98,6 +98,7 @@
     
 }
 
+#pragma mark - Event Button
 - (IBAction)sliderStart:(UISlider*)sender{
     
     NSLog(@"sliderStart::%f:: %f",_playerView.totalTime, sender.value);
@@ -120,7 +121,7 @@
     NSLog(@"sliderFinish::%f:: %f",_playerView.totalTime, sender.value);
     _playerView.delegate = self;
     _playerView.skipToTime = sender.value*_playerView.totalTime;
-
+    
 }
 
 - (IBAction)playerMovieEvent:(UIButton*)sender{
@@ -136,7 +137,7 @@
 //倍数播放
 - (IBAction)speedBtnEvent:(UIButton *)sender {
     
-   
+    
 }
 
 @end
