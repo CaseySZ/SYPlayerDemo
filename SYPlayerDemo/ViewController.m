@@ -13,10 +13,14 @@
 #import "NSObject+SYKVO.h"
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
+#import "PlayerViewDemo.h"
 
 @interface ViewController (){
     
     SYPlayerMovieView *syPlayerMoviewV;
+    PlayerViewDemo  *_playerView;
+    BOOL _isFullScreen;
+    
 }
 
 @end
@@ -26,8 +30,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self useDelegateSytleDemo];
+   // [self useBlockSytleDemo];
+}
+
+- (void)useDelegateSytleDemo{
+    
+    _playerView = [PlayerViewDemo instanceView];
+    _playerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
+    [_playerView.fullBtn addTarget:self action:@selector(fullBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
+    _playerView.videoUrl = [NSURL URLWithString:@"http://mp4.examw.cn/m3u8/1/1.m3u8"];
+    [self.view addSubview:_playerView];
+    
+}
+
+
+- (void)useBlockSytleDemo{
+    
     syPlayerMoviewV = [[SYPlayerMovieView alloc] init];
-    syPlayerMoviewV.movieUrl = @"http://mp4.examw.cn/m3u8/1/1.m3u8";
+    syPlayerMoviewV.movieUrl = [NSURL URLWithString:@"http://mp4.examw.cn/m3u8/1/1.m3u8"];
     [syPlayerMoviewV setFrame:CGRectMake(0, 10, [UIScreen mainScreen].bounds.size.width, 300)];
     [self.view addSubview:syPlayerMoviewV];
     
@@ -79,6 +100,7 @@
     
     NSLog(@"ViewDid finish");
 }
+
 
 - (UISlider*)slider{
     
@@ -142,6 +164,32 @@
         [hud hide:YES afterDelay:0.3];
     }];
     
+}
+
+
+- (void)fullBtnEvent:(UIButton *)btn {
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        if (_isFullScreen) {
+            [UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelNormal;
+            _playerView.transform = CGAffineTransformRotate(_playerView.transform, M_PI/2);
+            _playerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
+            _playerView.isFullScreen = NO;
+            [self.view addSubview: _playerView];
+            _isFullScreen = NO;
+            
+        }else {
+            
+            _playerView.transform = CGAffineTransformRotate(CGAffineTransformIdentity, -M_PI/2);
+            _playerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+            _playerView.isFullScreen = YES;
+            [UIApplication sharedApplication].statusBarHidden = YES;
+            [UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelAlert;
+            [[UIApplication sharedApplication].keyWindow addSubview:_playerView];
+            _isFullScreen = YES;
+        }
+    }];
 }
 
 @end

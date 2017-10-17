@@ -39,7 +39,7 @@ typedef void(^playFinishBlock)(NSDictionary *errorDes);
 @property (nonatomic, weak)id<SYPlayerMoviewViewDelegate>delegate;
 
 // 播放地址
-@property (nonatomic, strong)NSString *movieUrl;
+@property (nonatomic, strong)NSURL *movieUrl;
 
 // 播放速度 默认 x1
 @property (nonatomic, assign, setter=setPlayRate:)float playRate;
@@ -49,6 +49,8 @@ typedef void(^playFinishBlock)(NSDictionary *errorDes);
 
 //当前的播放时间 单位时间秒(s)
 @property (nonatomic, assign, readonly)float currentTime;
+
+@property (nonatomic, assign)float skipToTime;
 
 /**
   监听播放时间回调，也可以用delegate模式
@@ -88,7 +90,7 @@ typedef void(^playFinishBlock)(NSDictionary *errorDes);
  @param movieUrl 视频地址
  @param block 视频加载完成回调
  */
-- (void)playerNextMovieWithUrl:(NSString*)movieUrl loadFinish:(playPreloadFinish)block;
+- (void)playerNextMovieWithUrl:(NSURL*)movieUrl loadFinish:(playPreloadFinish)block;
 
 
 /**

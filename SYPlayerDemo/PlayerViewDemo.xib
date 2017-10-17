@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" misplaced="YES" id="qSY-d6-6h1" customClass="PlayerViewDemo">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" id="Q22-ig-pic" customClass="SYPlayerMovieView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" id="rQG-hh-MGU" customClass="SYPlayerMovieView">
+                    <rect key="frame" x="0.0" y="160" width="320" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00/20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H9L-PM-gAv">
+                            <rect key="frame" x="30" y="10" width="80" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Evh-1T-4Dl">
+                            <rect key="frame" x="0.0" y="5" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="播放">
+                                <color key="titleColor" red="0.93725490199999995" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="暂停"/>
+                            <connections>
+                                <action selector="playerMovieEvent:" destination="qSY-d6-6h1" eventType="touchUpInside" id="FMZ-tN-cVI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A53-u2-pks">
+                            <rect key="frame" x="260" y="0.0" width="30" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="1.0x">
+                                <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="speedBtnEvent:" destination="qSY-d6-6h1" eventType="touchUpInside" id="P31-1X-nro"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mBC-gF-4Lf">
+                            <rect key="frame" x="290" y="5" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="全屏"/>
+                        </button>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="Qj1-cI-l3m">
+                            <rect key="frame" x="115" y="19" width="140" height="2"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </progressView>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="nFe-sc-Jxr">
+                            <rect key="frame" x="113" y="5" width="144" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="0.20373019370000001" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_playBtn" destination="Evh-1T-4Dl" id="pxI-HX-SfN"/>
+                <outlet property="_playerView" destination="Q22-ig-pic" id="D5U-Hw-6SO"/>
+                <outlet property="_progressView" destination="Qj1-cI-l3m" id="gi1-Oo-Eym"/>
+                <outlet property="_slider" destination="nFe-sc-Jxr" id="RsD-6r-H9w"/>
+                <outlet property="_speedBtn" destination="A53-u2-pks" id="inC-eQ-KM4"/>
+                <outlet property="_timeLb" destination="H9L-PM-gAv" id="jqn-zc-LAH"/>
+                <outlet property="_toolView" destination="rQG-hh-MGU" id="2G0-qK-B0u"/>
+                <outlet property="fullBtn" destination="mBC-gF-4Lf" id="tiI-cK-R82"/>
+            </connections>
+            <point key="canvasLocation" x="-1512" y="144"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="全屏" width="14" height="14"/>
+        <image name="播放" width="11" height="14"/>
+        <image name="暂停" width="10" height="14"/>
+    </resources>
+</document>

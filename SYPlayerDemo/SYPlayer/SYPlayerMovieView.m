@@ -40,7 +40,7 @@
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:_movieUrl] options:nil];
+        AVURLAsset *asset = [AVURLAsset URLAssetWithURL:_movieUrl options:nil];
         weakSelf.totalTime = asset.duration.value / asset.duration.timescale;
         
         NSArray *loadProAry = [NSArray arrayWithObjects:SYAssetProTracksTracks, SYAssetProTracksPlayable, nil];
@@ -56,7 +56,7 @@
     
 }
 
-- (void)playerNextMovieWithUrl:(NSString*)movieUrl loadFinish:(playPreloadFinish)block{
+- (void)playerNextMovieWithUrl:(NSURL*)movieUrl loadFinish:(playPreloadFinish)block{
     
     _movieUrl = movieUrl;
     _preloadFinishBlock = block;
@@ -122,6 +122,13 @@
         self.currentTime = 0;
         [self.player replaceCurrentItemWithPlayerItem:self.mPlayerItem];
     }
+    
+}
+
+- (void)setSkipToTime:(float)skipToTime{
+    
+    _skipToTime = skipToTime;
+    [self seekToTime:skipToTime finish:nil];
     
 }
 

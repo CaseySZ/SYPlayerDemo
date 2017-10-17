@@ -18,6 +18,11 @@
 		3D6EC86E1F78B25E0049F75F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D6EC86D1F78B25E0049F75F /* README.md */; };
 		3D6EC8701F78B57D0049F75F /* SYPlayer.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3D6EC86F1F78B57D0049F75F /* SYPlayer.podspec */; };
 		3D6EC8771F78CF700049F75F /* NSObject+SYKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6EC8751F78CF700049F75F /* NSObject+SYKVO.m */; };
+		3D86DBE01F95B2A300D40DAA /* PlayerViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D86DBDE1F95B2A200D40DAA /* PlayerViewDemo.m */; };
+		3D86DBE41F95B39500D40DAA /* UIView+SYLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D86DBE31F95B39400D40DAA /* UIView+SYLayout.m */; };
+		3D86DBE71F95B3B400D40DAA /* NSDictionary+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D86DBE61F95B3B400D40DAA /* NSDictionary+Sort.m */; };
+		3D86DBEA1F95B3BE00D40DAA /* NSString+FormatType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D86DBE91F95B3BE00D40DAA /* NSString+FormatType.m */; };
+		3D86DBEB1F95B47D00D40DAA /* PlayerViewDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D86DBDD1F95B2A200D40DAA /* PlayerViewDemo.xib */; };
 		3DF8FEEA1F6F792600BACEAC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8FEE91F6F792600BACEAC /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,15 @@
 		3D6EC86F1F78B57D0049F75F /* SYPlayer.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SYPlayer.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3D6EC8751F78CF700049F75F /* NSObject+SYKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SYKVO.m"; sourceTree = "<group>"; };
 		3D6EC8761F78CF700049F75F /* NSObject+SYKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SYKVO.h"; sourceTree = "<group>"; };
+		3D86DBDD1F95B2A200D40DAA /* PlayerViewDemo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewDemo.xib; sourceTree = "<group>"; };
+		3D86DBDE1F95B2A200D40DAA /* PlayerViewDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewDemo.m; sourceTree = "<group>"; };
+		3D86DBDF1F95B2A200D40DAA /* PlayerViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewDemo.h; sourceTree = "<group>"; };
+		3D86DBE21F95B39400D40DAA /* UIView+SYLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SYLayout.h"; sourceTree = "<group>"; };
+		3D86DBE31F95B39400D40DAA /* UIView+SYLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SYLayout.m"; sourceTree = "<group>"; };
+		3D86DBE51F95B3B400D40DAA /* NSDictionary+Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Sort.h"; sourceTree = "<group>"; };
+		3D86DBE61F95B3B400D40DAA /* NSDictionary+Sort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Sort.m"; sourceTree = "<group>"; };
+		3D86DBE81F95B3BE00D40DAA /* NSString+FormatType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FormatType.h"; sourceTree = "<group>"; };
+		3D86DBE91F95B3BE00D40DAA /* NSString+FormatType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FormatType.m"; sourceTree = "<group>"; };
 		3DF8FEE81F6F792600BACEAC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		3DF8FEE91F6F792600BACEAC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +92,15 @@
 				3D2E6DBE1F6A66630037444B /* AppDelegate.m */,
 				3D2E6DC01F6A66630037444B /* ViewController.h */,
 				3D2E6DC11F6A66630037444B /* ViewController.m */,
+				3D86DBDF1F95B2A200D40DAA /* PlayerViewDemo.h */,
+				3D86DBDE1F95B2A200D40DAA /* PlayerViewDemo.m */,
+				3D86DBDD1F95B2A200D40DAA /* PlayerViewDemo.xib */,
+				3D86DBE21F95B39400D40DAA /* UIView+SYLayout.h */,
+				3D86DBE31F95B39400D40DAA /* UIView+SYLayout.m */,
+				3D86DBE51F95B3B400D40DAA /* NSDictionary+Sort.h */,
+				3D86DBE61F95B3B400D40DAA /* NSDictionary+Sort.m */,
+				3D86DBE81F95B3BE00D40DAA /* NSString+FormatType.h */,
+				3D86DBE91F95B3BE00D40DAA /* NSString+FormatType.m */,
 				3DF8FEE81F6F792600BACEAC /* MBProgressHUD.h */,
 				3DF8FEE91F6F792600BACEAC /* MBProgressHUD.m */,
 				3D6EC8661F78A16D0049F75F /* SYPlayer */,
@@ -172,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D86DBEB1F95B47D00D40DAA /* PlayerViewDemo.xib in Resources */,
 				3D2E6DCA1F6A66630037444B /* LaunchScreen.storyboard in Resources */,
 				3D2E6DC71F6A66630037444B /* Assets.xcassets in Resources */,
 				3D6EC86E1F78B25E0049F75F /* README.md in Resources */,
@@ -188,11 +212,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6EC86B1F78A16D0049F75F /* SYAVMovieView.m in Sources */,
+				3D86DBE41F95B39500D40DAA /* UIView+SYLayout.m in Sources */,
 				3D6EC8771F78CF700049F75F /* NSObject+SYKVO.m in Sources */,
 				3D2E6DC21F6A66630037444B /* ViewController.m in Sources */,
+				3D86DBEA1F95B3BE00D40DAA /* NSString+FormatType.m in Sources */,
 				3D2E6DBF1F6A66630037444B /* AppDelegate.m in Sources */,
 				3D6EC86C1F78A16D0049F75F /* SYPlayerMovieView.m in Sources */,
+				3D86DBE01F95B2A300D40DAA /* PlayerViewDemo.m in Sources */,
 				3D2E6DBC1F6A66630037444B /* main.m in Sources */,
+				3D86DBE71F95B3B400D40DAA /* NSDictionary+Sort.m in Sources */,
 				3DF8FEEA1F6F792600BACEAC /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
